@@ -1,4 +1,6 @@
 import os
+import csv
+import random
 def options():
     print("""Options:
 1. Insert details of a new account (with a starting balance amount)
@@ -52,3 +54,20 @@ while a == True:
                 fileout.close()
                 os.remove(r"numbers.txt")
                 os.rename(r"new.txt",r"numbers.txt")
+
+        if act == 5:
+            uid = input("Enter your A/c Number: ")
+            cash = float("Enter amount: ")
+            with open("file1", "r") as reader, open("temp", 'w+') as writer:
+                reader = csv.reader(reader)
+                writer = csv.writer(writer)
+                for i in reader:
+                    if uid == i[0]:
+                        cash += i[3]
+                        writer.writerow([uid, i[1], i[2], cash])
+                        continue
+                    else:
+                        writer.writerow(i)
+                        
+                os.remove(r"file1.txt")
+                os.rename(r"temp.txt", r"file1.txt")
