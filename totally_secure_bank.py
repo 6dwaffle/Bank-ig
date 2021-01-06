@@ -41,6 +41,7 @@ while a == True:
                 file_writer.writerow(['{}'.format(y), '{}'.format(name), '{}'.format(mobile),'{}'.format(balance)])
         if act==7:
             a = False
+        # act 2 is not even close to working
         if act == 2:
             fileout = open("new.txt","w")
             data = file2.readlines()
