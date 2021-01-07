@@ -115,9 +115,25 @@ while a == True:
                     if i!= []:
                         if uid == i[0]:
                             cash += float(i[2])
-                            writer.writerow([uid, i[1], cash,i[3] ])
+                            writer.writerow([uid, i[1], cash, i[3]])
                         else:
                             writer.writerow(i)
                         
+            os.remove(r"bank_main.csv")
+            os.rename(r"new.csv", r"bank_main.csv")
+
+        if act == 7:
+            uid = input("Enter your A/c no>: ")
+            mob = input("Enter your number: ")
+            with open("bank_main.csv", "r") as reader, open("new.csv", 'w+') as writer:
+                reader = csv.reader(reader)
+                writer = csv.writer(writer)
+                for i in reader:
+                    if i!= []:
+                        if uid == i[0]:
+                            writer.writerow([uid, mob, i[2], i[3]])
+                        else:
+                            writer.writerow[i]
+
             os.remove(r"bank_main.csv")
             os.rename(r"new.csv", r"bank_main.csv")
