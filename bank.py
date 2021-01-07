@@ -65,7 +65,6 @@ while a == True:
                     if uid == i[0]:
                         cash += i[3]
                         writer.writerow([uid, i[1], i[2], cash])
-                        continue
                     else:
                         writer.writerow(i)
                         
