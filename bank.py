@@ -57,7 +57,10 @@ while a == True:
 
         if act == 5:
             uid = input("Enter your A/c Number: ")
-            cash = float(input("Enter amount: "))
+            try:
+                cash = float(input("Enter amount: "))
+            except:
+                print("Error")
             with open("file1", "r") as reader, open("temp", 'w+') as writer:
                 reader = csv.reader(reader)
                 writer = csv.writer(writer)
@@ -68,5 +71,5 @@ while a == True:
                     else:
                         writer.writerow(i)
                         
-                os.remove(r"file1.txt")
-                os.rename(r"temp.txt", r"file1.txt")
+            os.remove(r"file1.csv")
+            os.rename(r"temp.csv", r"file1.csv")
