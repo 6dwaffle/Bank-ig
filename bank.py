@@ -57,7 +57,7 @@ while a == True:
 
         if act == 5:
             uid = input("Enter your A/c Number: ")
-            cash = float("Enter amount: ")
+            cash = float(input("Enter amount: "))
             with open("file1", "r") as reader, open("temp", 'w+') as writer:
                 reader = csv.reader(reader)
                 writer = csv.writer(writer)
