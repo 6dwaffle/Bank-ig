@@ -122,7 +122,7 @@ while a == True:
             os.remove(r"bank_main.csv")
             os.rename(r"new.csv", r"bank_main.csv")
 
-        if act == 7:
+        if act == 6:
             uid = input("Enter your A/c no>: ")
             mob = input("Enter your number: ")
             with open("bank_main.csv", "r") as reader, open("new.csv", 'w+') as writer:
